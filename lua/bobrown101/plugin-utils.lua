@@ -33,4 +33,6 @@ function M.buffer_find_root_dir(bufnr, is_root_path)
     end
 end
 
+function M.open_file(file) vim.cmd("e " .. file) end
+
 return M
