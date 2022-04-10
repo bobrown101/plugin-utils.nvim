@@ -33,6 +33,11 @@ function M.buffer_find_root_dir(bufnr, is_root_path)
     end
 end
 
+function M.file_exists(fname)
+    local stat = vim.loop.fs_stat(fname)
+    return (stat and stat.type) or false
+end
+
 function M.open_file(file) vim.cmd("e " .. file) end
 
 return M
